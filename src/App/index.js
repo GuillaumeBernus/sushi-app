@@ -1,7 +1,7 @@
 import React from "react";
 //import Greetings from "../Greetings";
 //import Counter from "../Counter";
-
+import Header from "../Header";
 export default function App() {
   return (
     /*<article>
@@ -10,6 +10,9 @@ export default function App() {
       <Counter beginAt={4} />
       <Counter />
     </article>*/
-    <div></div>
+    <div>
+      <Header title="Homepage" />
+      <article>MAIN</article>
+    </div>
   );
 }
