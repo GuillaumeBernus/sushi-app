@@ -5,6 +5,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Header from "../Header";
 import theme from "./theme";
 import { ThemeProvider } from "@material-ui/core/styles";
+import SushiCard from "../SushiCard";
 export default function App() {
   return (
     /*<article>
@@ -17,7 +18,9 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header title="Homepage" />
-      <article>MAIN</article>
+      <article>
+        <SushiCard />
+      </article>
     </ThemeProvider>
   );
 }
