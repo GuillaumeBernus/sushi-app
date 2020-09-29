@@ -22,10 +22,12 @@ export default function SushiCard({ image, title, description }) {
 
   return (
     <Card className={classes.root}>
-      <CardMedia className={classes.media} image={image} title={title} />
+      {image && (
+        <CardMedia className={classes.media} image={image} title={title} />
+      )}
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-          {title}
+          {title || "unknown"}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
           {description}
@@ -45,7 +47,7 @@ SushiCard.propTypes = {
   description: string,
 };
 SushiCard.defaultProps = {
-  image: "https://images.sweetauthoring.com/recipe/43926_2090.jpg",
+  image: "http://via.placeholder.com/400x300",
   title: "Maki",
   description: "Rice, fish, avocado,...",
 };
