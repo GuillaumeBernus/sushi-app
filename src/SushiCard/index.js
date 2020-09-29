@@ -18,7 +18,7 @@ import useStyles from "./styles";
 export default function SushiCard({ image, title, description }) {
   const classes = useStyles();
 
-  const [quantity, { inc, dec }] = useCounter(1, 10, 1);
+  const [quantity, { inc, dec, set }] = useCounter(1, 10, 1);
 
   return (
     <Card className={classes.root}>
@@ -34,6 +34,7 @@ export default function SushiCard({ image, title, description }) {
           <IndeterminateCheckBox fontSize="inherit" />
         </IconButton>
         <Input
+          onChange={(event) => set(event.target.value)}
           name="quantity"
           value={quantity}
           inputProps={{ "aria-label": "quantity" }}
