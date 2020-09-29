@@ -4,11 +4,11 @@ import { CircularProgress, Grid } from "@material-ui/core";
 import SushiCard from "../SushiCard";
 import useStyles from "./styles";
 import { isEmpty } from "lodash";
-
+import { string } from "prop-types";
 import useSushis from "../useSushis";
-export default function SushiCardList() {
+export default function SushiCardList({ search }) {
   const classes = useStyles();
-  const { isLoading, error, data: sushis } = useSushis();
+  const { isLoading, error, data: sushis } = useSushis(search);
   if (isLoading) return <CircularProgress color="secondary" />;
 
   if (error) return "error!";
@@ -24,3 +24,6 @@ export default function SushiCardList() {
     </Grid>
   );
 }
+SushiCardList.propList = {
+  search: string,
+};

@@ -3,50 +3,44 @@
     {
       "id": 1,
       "image": "https://www.atelierdeschefs.com/media/recette-d7467-maki-vegetarien.jpg",
-      "title": "MakiA",
+      "title": "sushi saumon",
       "description": "du riz et du saumon"
     },
     {
       "id": 2,
       "image": "https://fac.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Ffac.2F2018.2F07.2F30.2Feb0dc2cd-e936-45f8-9242-23f6a360f8b1.2Ejpeg/850x478/quality/90/crop-from/center/california-maki-saumon-avocat.jpeg",
-      "title": "",
-      "description": "Ingrédients : riz, poisson, avocat,..."
+      "title": "Maki saumon",
+      "description": "Ingrédients : riz,  saumon, avocat,..."
     },
     {
       "id": 3,
       "image": "https://www.atelierdeschefs.com/media/recette-d7467-maki-vegetarien.jpg",
-      "title": "Sashimi",
-      "description": "Ingrédients : riz, poisson, avocat,..."
+      "title": "Sashimi saumon",
+      "description": "Ingrédients : saumon"
     },
     {
       "id": 4,
       "image": "https://www.atelierdeschefs.com/media/recette-d7467-maki-vegetarien.jpg",
-      "title": "MakiA",
-      "description": "Ingrédients : riz, poisson, avocat,..."
+      "title": "Tataki saumon",
+      "description": "Ingrédients : saumon, avocat,..."
     },
     {
       "id": 5,
       "image": "https://www.atelierdeschefs.com/media/recette-d7467-maki-vegetarien.jpg",
-      "title": "MakiA",
-      "description": "Ingrédients : riz, poisson, avocat,..."
+      "title": "Maki thon",
+      "description": "Ingrédients : riz, thon, avocat,..."
     },
     {
       "id": 6,
       "image": "https://www.atelierdeschefs.com/media/recette-d7467-maki-vegetarien.jpg",
-      "title": "MakiA",
-      "description": "Ingrédients : riz, poisson, avocat,..."
+      "title": "Sushi thon",
+      "description": "Ingrédients : riz, thon, avocat,..."
     },
     {
       "id": 7,
       "image": "https://www.atelierdeschefs.com/media/recette-d7467-maki-vegetarien.jpg",
-      "title": "MakiA",
-      "description": "Ingrédients : riz, poisson, avocat,..."
-    },
-    {
-      "id": 8,
-      "image": "https://www.atelierdeschefs.com/media/recette-d7467-maki-vegetarien.jpg",
-      "title": "MakiA",
-      "description": "Ingrédients : riz, poisson, avocat,..."
+      "title": "Sashimi thon",
+      "description": "Ingrédients : riz, thon, avocat,..."
     }
   ]
 }
