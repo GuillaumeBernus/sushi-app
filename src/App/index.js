@@ -5,8 +5,10 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Header from "../Header";
 import theme from "./theme";
 import { ThemeProvider } from "@material-ui/core/styles";
-import SushiCard from "../SushiCard";
+import SushiCardList from "../SushiCardList";
+import useStyles from "./styles";
 export default function App() {
+  const classes = useStyles();
   return (
     /*<article>
       <Greetings firstname="Guillaume" lastname="Bernus" />
@@ -18,8 +20,9 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header title="Homepage" />
+      <div className={classes.offset} />
       <article>
-        <SushiCard />
+        <SushiCardList />
       </article>
     </ThemeProvider>
   );
