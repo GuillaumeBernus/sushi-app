@@ -1,36 +1,56 @@
 import React from "react";
-import { IconButton, Input } from "@material-ui/core";
+import { Grid, IconButton, Input } from "@material-ui/core";
 import { AddBox, IndeterminateCheckBox } from "@material-ui/icons";
-
 import { number, func } from "prop-types";
+import config from "react-global-configuration";
 
-function Button({ onClick, label, Icon }) {
+function Button({ onClick, label, disabled, Icon }) {
   return (
-    <IconButton aria-label={label} size="medium" onClick={onClick}>
+    <IconButton
+      aria-label={label}
+      size="medium"
+      onClick={onClick}
+      disabled={disabled}
+    >
       <Icon fontSize="inherit" />
     </IconButton>
   );
 }
 export default function QuantityInput({ quantity, inc, set, dec }) {
+  const { min, max } = config.get("quantity");
+  const isDecrementable = quantity > min;
+  const isIncrementable = quantity < max;
   return (
-    <>
-      {dec && (
-        <Button
-          label="supprimer"
-          onClick={() => dec()}
-          Icon={IndeterminateCheckBox}
+    <Grid container>
+      <Grid item xs={4}>
+        {dec && (
+          <Button
+            label="supprimer"
+            onClick={() => dec()}
+            Icon={IndeterminateCheckBox}
+            disabled={!isDecrementable}
+          />
+        )}
+      </Grid>
+      <Grid item xs={4}>
+        <Input
+          onChange={(event) => set(event.target.value)}
+          name="quantity"
+          value={quantity}
+          inputProps={{ "aria-label": "quantity" }}
         />
-      )}
-      <Input
-        onChange={(event) => set(event.target.value)}
-        name="quantity"
-        value={quantity}
-        inputProps={{ "aria-label": "quantity" }}
-      />
-      {inc && (
-        <Button aria-label="ajouter" onClick={() => inc()} Icon={AddBox} />
-      )}
-    </>
+      </Grid>
+      <Grid item xs={4}>
+        {inc && (
+          <Button
+            aria-label="ajouter"
+            onClick={() => inc()}
+            Icon={AddBox}
+            disabled={!isIncrementable}
+          />
+        )}
+      </Grid>
+    </Grid>
   );
 }
 QuantityInput.propTypes = {
