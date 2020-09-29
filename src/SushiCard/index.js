@@ -5,18 +5,21 @@ import {
   CardContent,
   CardActions,
   CardMedia,
+  IconButton,
   Typography,
   Input,
 } from "@material-ui/core";
+import { AddBox, IndeterminateCheckBox } from "@material-ui/icons";
+
+import { string } from "prop-types";
+import { useCounter } from "react-use";
 
 import useStyles from "./styles";
-import { string } from "prop-types";
-
-import { AddBox, IndeterminateCheckBox } from "@material-ui/icons";
-import IconButton from "@material-ui/core/IconButton";
-
 export default function SushiCard({ image, title, description }) {
   const classes = useStyles();
+
+  const [quantity, { inc, dec }] = useCounter(1, 10, 1);
+
   return (
     <Card className={classes.root}>
       <CardMedia className={classes.media} image={image} title={title} />
@@ -27,15 +30,15 @@ export default function SushiCard({ image, title, description }) {
         <Typography variant="body2" color="textSecondary" component="p">
           {description}
         </Typography>
-        <IconButton aria-label="delete" size="medium">
+        <IconButton aria-label="supprimer" size="medium" onClick={() => dec()}>
           <IndeterminateCheckBox fontSize="inherit" />
         </IconButton>
         <Input
           name="quantity"
-          value={1}
-          inputProps={{ "aria-label": "description" }}
+          value={quantity}
+          inputProps={{ "aria-label": "quantity" }}
         />
-        <IconButton aria-label="add" size="medium">
+        <IconButton aria-label="ajouter" size="medium" onClick={() => inc()}>
           <AddBox fontSize="inherit" />
         </IconButton>
       </CardContent>
