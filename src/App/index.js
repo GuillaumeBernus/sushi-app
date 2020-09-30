@@ -5,16 +5,18 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import theme from "./theme";
 import { ThemeProvider } from "@material-ui/core/styles";
 
-import HomeScreen from "../HomeScreen";
-import BasketScreen from "../BasketScreen";
+import routes from "./routes";
+
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
         <Switch>
-          <Route exact path="/basket" component={BasketScreen} />
-          <Route exact path="/" component={HomeScreen} />
+          {Object.keys(routes).map((routeName) => {
+            const { path, component } = routes[routeName];
+            return <Route exact path={path} component={component} key={path} />;
+          })}
         </Switch>
       </BrowserRouter>
     </ThemeProvider>

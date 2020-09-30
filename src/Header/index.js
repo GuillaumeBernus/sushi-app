@@ -1,6 +1,6 @@
 import React from "react";
 import { string } from "prop-types";
-import { ShoppingCart } from "@material-ui/icons";
+import { ShoppingCart, Settings } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import {
   AppBar,
@@ -33,15 +33,13 @@ export default function Header({ title }) {
           <Typography variant="h6" className={classes.title}>
             {webSiteTitle} - {title}
           </Typography>
-          <IconButton
-            component={Link}
-            to="/basket"
-            aria-label="show 17 new notifications"
-            color="inherit"
-          >
+          <IconButton component={Link} to="/basket" color="inherit">
             <Badge badgeContent={2} color="secondary">
               <ShoppingCart />
             </Badge>
+          </IconButton>
+          <IconButton component={Link} to="/settings" color="inherit">
+            <Settings />
           </IconButton>
         </Toolbar>
       </AppBar>
