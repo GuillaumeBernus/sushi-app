@@ -1,5 +1,3 @@
-import config from "react-global-configuration";
-
 const responseToJson = (response) => response.json();
 
 export default function fetchYamato(route) {
