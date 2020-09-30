@@ -1,7 +1,7 @@
 import React from "react";
 import { string } from "prop-types";
 import { ShoppingCart } from "@material-ui/icons";
-
+import { Link } from "react-router-dom";
 import {
   AppBar,
   IconButton,
@@ -15,12 +15,6 @@ import Avatar from "@material-ui/core/Avatar";
 import sushiLogo from "./logo_sushi.png";
 import useStyles from "./useStyles";
 
-//styled-components
-// import { Logo } from "./styles";
-// import { Title } from "./styles";
-// import { Wrapper } from "./styles";
-// import { Badge } from "./styles";
-
 const webSiteTitle = "Les Sushi de Guigui";
 
 export default function Header({ title }) {
@@ -29,11 +23,22 @@ export default function Header({ title }) {
     <div className={classes.root}>
       <AppBar position="fixed">
         <Toolbar>
-          <Avatar alt={webSiteTitle} src={sushiLogo} className={classes.logo} />
+          <Link to="/">
+            <Avatar
+              alt={webSiteTitle}
+              src={sushiLogo}
+              className={classes.logo}
+            />
+          </Link>
           <Typography variant="h6" className={classes.title}>
             {webSiteTitle} - {title}
           </Typography>
-          <IconButton aria-label="show 17 new notifications" color="inherit">
+          <IconButton
+            component={Link}
+            to="/basket"
+            aria-label="show 17 new notifications"
+            color="inherit"
+          >
             <Badge badgeContent={2} color="secondary">
               <ShoppingCart />
             </Badge>
