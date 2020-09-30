@@ -9,9 +9,10 @@ import useSushis from "../useSushis";
 export default function SushiCardList({ search }) {
   const classes = useStyles();
   const { isLoading, error, data: sushis } = useSushis(search);
+
   if (isLoading) return <CircularProgress color="secondary" />;
 
-  if (error) return "error!";
+  if (error) return `error : ${error}!`;
 
   return (
     <Grid container spacing={2} className={classes.wrapper}>
