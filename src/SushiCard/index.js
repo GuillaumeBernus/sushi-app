@@ -1,53 +1,20 @@
-import React from "react";
-import {
-  Button,
-  Card,
-  CardContent,
-  CardActions,
-  CardMedia,
-  Typography,
-} from "@material-ui/core";
+import { connect } from "react-redux";
 
-import { string } from "prop-types";
-import { useCounter } from "react-use";
-import config from "react-global-configuration";
+//pour la v2
+//import { bindActionCreators } from "redux";
+import { addToBasket } from "../addToBasket/actions";
+import SushiCard from "./component";
 
-import useStyles from "./styles";
-import QuantityInput from "./QuantityInput";
-export default function SushiCard({ image, title, description }) {
-  const classes = useStyles();
+//version 1 - base
+// const mapDispatchToProps = (dispatch) => ({
+//   addToBasket: (sushiId, quantity) => dispatch(addToBasket(sushiId, quantity)),
+// });
 
-  const { min, max, defaultValue } = config.get("quantity");
-  const [quantity, { inc, dec, set }] = useCounter(defaultValue, max, min);
+//version 2 - redux
+// const mapDispatchToProps = (dispatch) =>
+//   bindActionCreators({ addToBasket }, dispatch);
 
-  return (
-    <Card className={classes.root}>
-      {image && (
-        <CardMedia className={classes.media} image={image} title={title} />
-      )}
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-          {title || "unknown"}
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {description}
-        </Typography>
-        <QuantityInput quantity={quantity} inc={inc} dec={dec} set={set} />
-      </CardContent>
-      <CardActions disableSpacing>
-        <Button size="small">Ajouter</Button>
-      </CardActions>
-    </Card>
-  );
-}
+//version 3 - react-redux
+const mapDispatchToProps = { addToBasket };
 
-SushiCard.propTypes = {
-  image: string,
-  title: string,
-  description: string,
-};
-SushiCard.defaultProps = {
-  image: "http://via.placeholder.com/400x300",
-  title: "Maki",
-  description: "Rice, fish, avocado,...",
-};
+export default connect(null, mapDispatchToProps)(SushiCard);
