@@ -15,7 +15,7 @@ import Avatar from "@material-ui/core/Avatar";
 import sushiLogo from "./logo_sushi.png";
 import useStyles from "./useStyles";
 
-const webSiteTitle = "Les Sushi de Guigui";
+const webSiteTitle = "Guigui Sushi";
 
 export default function Header({ title }) {
   const classes = useStyles();
