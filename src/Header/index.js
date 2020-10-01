@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
 
 import Header from "./component";
-//import { basketCount } from "../addToBasket/selectors";
-import collectionCount from "../collectionCount";
+import { basketCount } from "../addToBasket/selectors";
+//import collectionCount from "../collectionCount";
 const mapStateToProps = (state) => ({
-  basketCount: collectionCount(state.basket),
+  basketCount: basketCount(state.basket),
 });
 
 export default connect(mapStateToProps)(Header);
